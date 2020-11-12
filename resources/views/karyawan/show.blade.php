@@ -32,12 +32,12 @@
             <div class="card card-maroon card-outline">
                 <div class="card-body box-profile">
                   <div class="text-center">
-                    <img class="profile-user-img img-fluid img-circle"
+                    <img class="img-circle" width="250px" height="250px"
                          src="{{ $karyawan->user->getAvatar() }}"
                          alt="User profile picture">
                   </div>
                   <h3 class="profile-username text-center">{{ $karyawan->nama }}</h3>
-                  {{-- <p class="text-muted text-center">{{ $karyawan->bagian->nama }}</p> --}}
+                  <p class="text-muted text-center">{{ $karyawan->bagian->nama }}</p>
                   <div class="col-md-12">
                     <div class="row text-center m-t-10">
                         <div class="col-md-4"><strong>NIK</strong>
@@ -57,7 +57,7 @@
                         </div>
                     </div>
                     <!-- /.row -->
-                    <hr>
+                    <hr color="maroon">
                     <!-- .row -->
                     <div class="row text-center m-t-10">
                         <div class="col-md-4"><strong>Email ID</strong>
@@ -71,7 +71,7 @@
                         </div>
                     </div>
                     <!-- /.row -->
-                    <hr>
+                    <hr color="maroon">
                     <!-- .row -->
                   </div>
                 </div>

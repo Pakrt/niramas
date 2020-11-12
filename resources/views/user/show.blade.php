@@ -31,17 +31,17 @@
             <div class="card card-maroon card-outline">
                 <div class="card-body box-profile">
                   <div class="text-center">
-                    <img class="profile-user-img img-fluid img-circle""
-                         src="{{ Auth::user()->getAvatar() }}"
-                         alt="User profile picture">
                     <button type="button" data-toggle="modal" data-target="#exampleModal" class="btn">
-                        <i class="fas fa-pencil-alt"></i>
+                      <img class="img-circle" width="250px" height="250px"
+                        src="{{ Auth::user()->getAvatar() }}"
+                        alt="User profile picture">
                     </button>
                   </div>
-
-                  <h3 class="profile-username text-center">{{ $user->karyawan->nama }}</h3>
-
-                  <p class="text-muted text-center">{{ $user->karyawan->bagian->nama }}</p>
+                  <div class="col-md-12">
+                    <a href="/karyawan/{{$user->karyawan->id}}/edit" class="btn btn-md" style="background-color: transparent; color:black"><i class="fas fa-pencil-alt"></i></a>
+                    <h3 class="profile-username text-center">{{ $user->karyawan->nama }}</h3>
+                    <p class="text-muted text-center">{{ $user->karyawan->bagian->nama }}</p>
+                  </div>
                   <div class="col-md-12">
                     <div class="row text-center m-t-10">
                         <div class="col-md-4"><strong>NIK</strong>
@@ -61,7 +61,7 @@
                         </div>
                     </div>
                     <!-- /.row -->
-                    <hr>
+                    <hr color="maroon">
                     <!-- .row -->
                     <div class="row text-center m-t-10">
                         <div class="col-md-4"><strong>Email ID</strong>
@@ -75,11 +75,10 @@
                         </div>
                     </div>
                     <!-- /.row -->
-                    <hr>
+                    <hr color="maroon">
                     <!-- .row -->
                     <div class="text-center">
-                        <a href="{{ url('home')}}" class="btn btn-warning">Kembali</a>&emsp;&emsp;&emsp;
-                        <a href="/karyawan/{{$user->karyawan->id}}/edit" class="btn btn-info">Edit</a>
+                        <a href="{{ url('password')}}"><small style="color: maroon">Ganti Password</small></a>
                     </div>
                   </div>
                 </div>
@@ -92,7 +91,7 @@
           <!-- /.row -->
         </div>
         <!-- /.container-fluid -->
-      </section>
+    </section>
       <!-- /.content -->
       <!-- Modal -->
         <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
