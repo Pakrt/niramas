@@ -1,6 +1,6 @@
 @extends('layouts.master')
 @section('tittle')
-    Data Kategori
+    Data Kategori Barang
 @endsection
 @section('content')
     <!-- Content Header (Page header) -->
@@ -12,9 +12,8 @@
             </div><!-- /.col -->
             <div class="col-sm-6">
               <ol class="breadcrumb float-sm-right text-light">
-                <li class="breadcrumb-item"><a href="/home" class="btn btn-danger btn-xs">Home</a></li>
-                <li class="breadcrumb-item"><a href="/home" class="btn btn-danger btn-xs">Master</a></li>
-                <li class="breadcrumb-item active">Master Kategori</li>
+                <li class="breadcrumb-item"><a href={{ url('/home')}} class="btn btn-danger btn-xs">Home</a></li>
+                <li class="breadcrumb-item active">Data Kategori Barang</li>
               </ol>
             </div><!-- /.col -->
           </div><!-- /.row -->

@@ -58,8 +58,9 @@ class KaryawanController extends Controller
     public function update(Request $request, $id)
     {
         $karyawan = Karyawan::find($id);
+        $user = $karyawan->user_id;
         $karyawan->update($request->all());
-        return redirect('/karyawan')->with('status', 'Data berhasil diupdate !!');
+        return redirect("/user/$user/detail")->with('status', 'Data berhasil diupdate !!');
     }
 
     public function destroy($id)

@@ -69,42 +69,46 @@
         </style>
     </head>
     <body>
-        <div class="flex-center position-ref full-height">
-            {{-- @if (Route::has('login'))
-                <div class="top-right links">
-                    @auth
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href="{{ route('login') }}">Login</a>
-
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}">Register</a>
-                        @endif
-                    @endauth
-                </div>
-            @endif --}}
-
-            <div class="content">
-                <div class="title m-b-md">
-                    NIRAMAS PANDAAN SEJAHTERA
-                </div>
-                <div class="row">
-                    <div class="col-md-12">
-                        @if (Route::has('login'))
+        <div class="row">
+            <div class="col-md-12 col-xs-12">
+                <div class="flex-center position-ref full-height">
+                    {{-- @if (Route::has('login'))
+                        <div class="top-right links">
                             @auth
-                                <a href="{{ url('/home') }}" class="btn btn-default btn-large">
-                                    <h3><b>HOME</b></h3>
-                                </a>
+                                <a href="{{ url('/home') }}">Home</a>
                             @else
-                                <a href="{{ route('login') }}" class="btn btn-default btn-large">
-                                    <h3><b>LOGIN</b></h3>
-                                </a>
+                                <a href="{{ route('login') }}">Login</a>
 
-                                {{-- @if (Route::has('register'))
-                                    <a href="{{ route('register') }}" class="btn btn-danger">Register</a>
-                                @endif --}}
+                                @if (Route::has('register'))
+                                    <a href="{{ route('register') }}">Register</a>
+                                @endif
                             @endauth
-                        @endif
+                        </div>
+                    @endif --}}
+
+                    <div class="content">
+                        <div class="title m-b-md">
+                            NIRAMAS PANDAAN SEJAHTERA
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                @if (Route::has('login'))
+                                    @auth
+                                        <a href="{{ url('/home') }}" class="btn btn-default btn-large">
+                                            <h3><b>HOME</b></h3>
+                                        </a>
+                                    @else
+                                        <a href="{{ route('login') }}" class="btn btn-default btn-large">
+                                            <h3><b>LOGIN</b></h3>
+                                        </a>
+
+                                        {{-- @if (Route::has('register'))
+                                            <a href="{{ route('register') }}" class="btn btn-danger">Register</a>
+                                        @endif --}}
+                                    @endauth
+                                @endif
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

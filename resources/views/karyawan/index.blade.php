@@ -12,9 +12,8 @@
             </div><!-- /.col -->
             <div class="col-sm-6">
               <ol class="breadcrumb float-sm-right text-light">
-                <li class="breadcrumb-item"><a href="/home" class="btn btn-danger btn-xs">Home</a></li>
-                <li class="breadcrumb-item"><a href="/home" class="btn btn-danger btn-xs">Master</a></li>
-                <li class="breadcrumb-item active">Master Karyawan</li>
+                <li class="breadcrumb-item"><a href={{ url('/home')}} class="btn btn-danger btn-xs">Home</a></li>
+                <li class="breadcrumb-item active">Data Karyawan</li>
               </ol>
             </div><!-- /.col -->
           </div><!-- /.row -->
@@ -38,37 +37,6 @@
                     <a href="{{ url('karyawan/form')}}" class="btn btn-secondary">Tambah Data</a>
                 </div>
                 <div class="card-body">
-                  {{-- <table id="example1" class="table table-bordered table-striped">
-                    <thead>
-                    <tr>
-                      <th width="20">#</th>
-                      <th width="80">NIK</th>
-                      <th width="150">DEPARTMENT</th>
-                      <th>NAMA</th>
-                      <th width="100">AKSI</th>
-                    </tr>
-                    </thead>
-
-                    <tbody>
-                        @foreach ($karyawan as $karyawan)
-                        <tr>
-                            <th scope="row">{{ $loop->iteration}}</th>
-                            <td><a href="/karyawan/{{ $karyawan->id }}/detail">{{$karyawan->nik}}</td>
-                            <td><a href="/karyawan/{{ $karyawan->id }}/detail">{{$karyawan->bagian->nama}}</td>
-                            <td><a href="/karyawan/{{ $karyawan->id }}/detail">{{$karyawan->nama}}</td>
-                            <td text-center>
-                                <form action="/karyawan/{{ $karyawan->id }}/delete" method="POST">
-                                    @method('delete')
-                                    @csrf
-                                    <a href="/karyawan/{{$karyawan->id}}/edit" class="btn btn-primary btn-sm"><i class="fas fa-pencil-alt"></i></a>&emsp;
-                                    <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Yakin mau hapus datanya niiih ??')"><i class="fas fa-trash"></i></button>
-                                </form>
-                            </td>
-                        </tr>
-                        @endforeach
-                    </tbody>
-                  </table> --}}
-
                     <div class="row d-flex align-items-stretch">
                         @foreach ($karyawan as $karyawan)
                         <div class="col-md-4 d-flex align-items-stretch">
@@ -94,12 +62,17 @@
                               </div>
                               <div class="card-footer">
                                 <div class="text-right">
-                                  <a href="https://api.whatsapp.com/send?phone=62{{$karyawan->kontak}}" class="btn btn-sm bg-teal" target="_blank">
-                                    <i class="fas fa-phone"></i> WhatsApp
-                                  </a>
-                                  <a href="/karyawan/{{$karyawan->id}}/detail" class="btn btn-sm btn-primary">
-                                    <i class="fas fa-user"></i> View Profile
-                                  </a>
+                                    <form action="/karyawan/{{ $karyawan->id }}/delete" method="POST">
+                                      @method('delete')
+                                      @csrf
+                                      <a href="https://api.whatsapp.com/send?phone=62{{$karyawan->kontak}}" class="btn btn-sm bg-teal" target="_blank">
+                                        <i class="fas fa-phone"></i> Hubungi
+                                      </a>
+                                      <a href="/karyawan/{{$karyawan->id}}/detail" class="btn btn-sm btn-primary">
+                                        <i class="fas fa-user"></i> Detail
+                                      </a>
+                                      <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Yakin mau hapus datanya niiih ??')"><i class="fas fa-trash"></i> Hapus</button>
+                                    </form>
                                 </div>
                               </div>
                             </div>

@@ -12,9 +12,9 @@
             </div><!-- /.col -->
             <div class="col-sm-6">
               <ol class="breadcrumb float-sm-right text-light">
-                <li class="breadcrumb-item"><a href="/home" class="btn btn-danger btn-xs">Home</a></li>
-                <li class="breadcrumb-item"><a href="/home" class="btn btn-danger btn-xs">Form</a></li>
-                <li class="breadcrumb-item active">Form Tambah Karyawan</li>
+                <li class="breadcrumb-item"><a href={{ url('/home')}} class="btn btn-danger btn-xs">Home</a></li>
+                <li class="breadcrumb-item"><a href={{ url('/karyawan')}} class="btn btn-danger btn-xs">Data Karyawan</a></li>
+                <li class="breadcrumb-item active">Edit Data Karyawan</li>
               </ol>
             </div><!-- /.col -->
           </div><!-- /.row -->

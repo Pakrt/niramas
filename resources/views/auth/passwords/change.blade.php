@@ -1,6 +1,6 @@
 @extends('layouts.master')
 @section('tittle')
-    Data Satuan
+    Ganti Password
 @endsection
 @section('content')
     <!-- Content Header (Page header) -->
@@ -8,13 +8,12 @@
         <div class="container-fluid">
           <div class="row mb-2">
             <div class="col-sm-6">
-              <h1 class="m-0 text-light" style="font-family: Verdana, Geneva, Tahoma, sans-serif">Data Satuan</h1>
+              <h1 class="m-0 text-light" style="font-family: Verdana, Geneva, Tahoma, sans-serif">Ganti Password</h1>
             </div><!-- /.col -->
             <div class="col-sm-6">
               <ol class="breadcrumb float-sm-right text-light">
-                <li class="breadcrumb-item"><a href="/home" class="btn btn-danger btn-xs">Home</a></li>
-                <li class="breadcrumb-item"><a href="/satuan" class="btn btn-danger btn-xs">Master</a></li>
-                <li class="breadcrumb-item active">Master Satuan</li>
+                <li class="breadcrumb-item"><a href={{ url('/home')}} class="btn btn-danger btn-xs">Home</a></li>
+                <li class="breadcrumb-item active">Ganti Password</li>
               </ol>
             </div><!-- /.col -->
           </div><!-- /.row -->
@@ -64,7 +63,7 @@
                             <div class="form-group">
                                 <div class="col-md-8 col-md-offset-4">
                                     <a href="/user/{{Auth::id()}}/detail" class="btn btn-warning">Kembali</a>
-                                    <button type="submit" class="btn btn-success">Ganti Password</button>
+                                    <button type="submit" class="btn btn-success" onclick="return confirm('Anda akan mengganti password anda !!')">Simpan</button>
                                 </div>
                             </div>
                         </form>

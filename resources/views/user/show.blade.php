@@ -12,7 +12,7 @@
             </div><!-- /.col -->
             <div class="col-sm-6">
               <ol class="breadcrumb float-sm-right text-light">
-                <li class="breadcrumb-item"><a href="/home" class="btn btn-danger btn-xs">Home</a></li>
+                <li class="breadcrumb-item"><a href={{ url('/home')}} class="btn btn-danger btn-xs">Home</a></li>
                 <li class="breadcrumb-item active">Data User</li>
               </ol>
             </div><!-- /.col -->
@@ -30,6 +30,12 @@
                 <!-- Profile Image -->
             <div class="card card-maroon card-outline">
                 <div class="card-body box-profile">
+                    @if (session('status'))
+                    <div class="alert alert-success">
+                        {{ session('status')}}
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    </div>
+                    @endif
                   <div class="text-center">
                     <button type="button" data-toggle="modal" data-target="#exampleModal" class="btn">
                       <img class="img-circle" width="250px" height="250px"

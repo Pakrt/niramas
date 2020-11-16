@@ -23,6 +23,6 @@ class UserController extends Controller
             $user->avatar = $request->file('avatar')->getClientOriginalName();
             $user->save();
         }
-        return redirect('/karyawan')->with('status', 'Data berhasil diupdate !!');
+        return redirect("/karyawan/$id/detail")->with('status', 'Data berhasil diupdate !!');
     }
 }

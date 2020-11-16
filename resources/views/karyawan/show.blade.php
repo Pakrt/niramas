@@ -12,9 +12,9 @@
             </div><!-- /.col -->
             <div class="col-sm-6">
               <ol class="breadcrumb float-sm-right text-light">
-                <li class="breadcrumb-item"><a href="/home" class="btn btn-danger btn-xs">Home</a></li>
-                <li class="breadcrumb-item"><a href="/home" class="btn btn-danger btn-xs">Master</a></li>
-                <li class="breadcrumb-item active">Master Karyawan</li>
+                <li class="breadcrumb-item"><a href={{ url('/home')}} class="btn btn-danger btn-xs">Home</a></li>
+                <li class="breadcrumb-item"><a href="/karyawan" class="btn btn-danger btn-xs">Data Karyawan</a></li>
+                <li class="breadcrumb-item active">Detail Karyawan</li>
               </ol>
             </div><!-- /.col -->
           </div><!-- /.row -->
@@ -32,9 +32,11 @@
             <div class="card card-maroon card-outline">
                 <div class="card-body box-profile">
                   <div class="text-center">
-                    <img class="img-circle" width="250px" height="250px"
-                         src="{{ $karyawan->user->getAvatar() }}"
-                         alt="User profile picture">
+                      <a href="{{ $karyawan->user->getAvatar() }}" target="_blank">
+                        <img class="img-circle" width="250px" height="250px"
+                        src="{{ $karyawan->user->getAvatar() }}"
+                        alt="User profile picture">
+                      </a>
                   </div>
                   <h3 class="profile-username text-center">{{ $karyawan->nama }}</h3>
                   <p class="text-muted text-center">{{ $karyawan->bagian->nama }}</p>
@@ -72,6 +74,9 @@
                     </div>
                     <!-- /.row -->
                     <hr color="maroon">
+                    <div class="">
+                        <a href="{{url('/karyawan')}}" class="btn btn-warning">Kembali</a>
+                    </div>
                     <!-- .row -->
                   </div>
                 </div>

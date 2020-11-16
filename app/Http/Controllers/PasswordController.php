@@ -45,6 +45,6 @@ class PasswordController extends Controller
 
         $user->password = bcrypt(request('password'));
         $user->save();
-        return redirect('/password')->with('status', 'Password berhasil diganti !!');
+        return redirect("/password")->with('status', 'Password berhasil diganti !!');
     }
 }

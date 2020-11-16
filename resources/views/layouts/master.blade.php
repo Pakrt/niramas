@@ -189,7 +189,7 @@
             </ul>
           </li> --}}
           <li class="nav-item">
-            <a href="/home" class="nav-link">
+            <a href={{ url('/home')}} class="nav-link">
               <i class="nav-icon fas fa-th"></i>
               <p>
                   Dashboard
