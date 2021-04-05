@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 12 Nov 2020 pada 10.12
+-- Waktu pembuatan: 05 Apr 2021 pada 04.59
 -- Versi server: 10.4.11-MariaDB
 -- Versi PHP: 7.4.3
 
@@ -176,8 +176,7 @@ CREATE TABLE `karyawans` (
 --
 
 INSERT INTO `karyawans` (`id`, `nik`, `user_id`, `bagian_id`, `nama`, `tanggal_lahir`, `jenis_kelamin`, `alamat`, `kontak`, `avatar`, `spare`, `spares`, `created_at`, `updated_at`) VALUES
-(2, '1461800043', 3, 1, 'RIZAL TAUFIQ', '2020-11-04', 'L', 'Perumahan Asabri blok A.05, Kecamatan Pandaan, Kabupaten Pasuruan, Jawa Timur, Indonesia', '82147777556', NULL, NULL, NULL, '2020-11-09 21:10:08', '2020-11-11 20:30:26'),
-(3, '1461800028', 4, 2, 'Deny Prasetyo', '2020-11-03', 'L', 'Wonoayu, Surabaya, JawaTimur', '85736000508', NULL, NULL, NULL, '2020-11-10 19:42:25', '2020-11-10 19:42:25');
+(2, '1461800043', 3, 1, 'RIZAL TAUFIQ', '2020-11-04', 'L', 'Perumahan Asabri blok A.05, Kecamatan Pandaan, Kabupaten Pasuruan, Jawa Timur, Indonesia', '82147777556', NULL, NULL, NULL, '2020-11-09 21:10:08', '2020-11-16 00:09:55');
 
 -- --------------------------------------------------------
 
@@ -296,8 +295,7 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`id`, `role`, `name`, `email`, `avatar`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
 (1, 'manager', 'Admin', 'admin@admin.com', NULL, NULL, '$2y$10$zH8pNsPCa9di0xYQOj4e1eITnvYucS17x6n0UFQAT1fQp3e3nqLty', NULL, '2020-09-17 20:11:10', '2020-09-17 20:11:10'),
-(3, 'crew', 'RIZAL TAUFIQ', 'lensa17.2018@gmail.com', 'me.jpeg', NULL, '$2y$10$2ekXqtM1YzJ52zoKAE8TZ.xKV5p.EDGGUBnnyy9vHeXybFtfxPyOG', 'y5nJZprEkNQvtXJ0nwozZIOlLUwNs0z51xa1Q6GlrezXjxxP5SUZEawqqv4v', '2020-11-09 21:10:08', '2020-11-12 00:51:42'),
-(4, 'crew', 'Deny Prasetyo', 'deny@deny.com', NULL, NULL, '$2y$10$0CP0wJ0l2PBNdSoOZ6HZ4eEGewo6DDLaPFKNikQqMuhfR3AXMiX/K', NULL, '2020-11-10 19:42:25', '2020-11-10 19:42:25');
+(3, 'crew', 'RIZAL TAUFIQ', 'lensa17.2018@gmail.com', 'me.jpeg', NULL, '$2y$10$2ekXqtM1YzJ52zoKAE8TZ.xKV5p.EDGGUBnnyy9vHeXybFtfxPyOG', 'cUmouv2ttoiIyeOIzuU7w9UPXlA20eWk9DGJXRCN4UVn5VlQazGZx5MtPSay', '2020-11-09 21:10:08', '2020-11-12 00:51:42');
 
 --
 -- Indexes for dumped tables
