@@ -34,7 +34,7 @@
         <div class="container-fluid">
           <!-- Small boxes (Stat box) -->
           <div class="row">
-            <div class="col-lg-3 col-6">
+            <div class="col-lg-3 col-sm-12">
               <!-- small box -->
               <div class="small-box bg-white">
                 <div class="inner">
@@ -49,7 +49,7 @@
               </div>
             </div>
             <!-- ./col -->
-            <div class="col-lg-3 col-6">
+            <div class="col-lg-3 col-sm-12">
               <!-- small box -->
               <div class="small-box bg-white">
                 <div class="inner">
@@ -63,7 +63,7 @@
               </div>
             </div>
             <!-- ./col -->
-            <div class="col-lg-3 col-6">
+            <div class="col-lg-3 col-sm-12">
               <!-- small box -->
               <div class="small-box bg-white">
                 <div class="inner">
@@ -77,7 +77,7 @@
               </div>
             </div>
             <!-- ./col -->
-            <div class="col-lg-3 col-6">
+            <div class="col-lg-3 col-sm-12">
               <!-- small box -->
               <div class="small-box bg-white">
                 <div class="inner">

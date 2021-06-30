@@ -29,7 +29,7 @@
     <section class="content">
         <div class="container-fluid">
           <div class="row">
-            <div class="col-8">
+            <div class="col-md-8 col-sm-12">
               <div class="card">
                 <div class="card-header">
                     @if (session('status'))
@@ -38,7 +38,9 @@
                         <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                     </div>
                     @endif
+                    @if(auth()->user()->role == 'ADMIN')
                     <a href="{{url ('/bmasuk/form')}}" class="btn btn-secondary">Tambah Data</a>
+                    @endif
                 </div>
                 <div class="card-body">
                   <table id="example1" class="table table-bordered table-striped">
@@ -48,7 +50,7 @@
                       <th width="100">KATEGORI</th>
                       <th>NAMA BARANG</th>
                       <th width="100">JUMLAH</th>
-                      <th width="100">AKSI</th>
+                      <th width="40">AKSI</th>
                     </tr>
                     </thead>
 
@@ -59,13 +61,13 @@
                             <td>{{$bmasuk->barang->kategori->kode}}</td>
                             <td>{{$bmasuk->barang->nama}}</td>
                             <td>{{$bmasuk->jumlah}}</td>
-                            <td text-center>
-                                <form action="/bmasuk/{{ $bmasuk->id }}/delete" method="POST">
+                            <td>
+                                {{-- <form action="/bmasuk/{{ $bmasuk->id }}/delete" method="POST">
                                     @method('delete')
-                                    @csrf
+                                    @csrf --}}
                                     <a href="/bmasuk/{{ $bmasuk->id }}/edit" class="btn btn-primary btn-sm"><i class="fas fa-pencil-alt"></i></a>&emsp;
-                                    <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Yakin mau hapus datanya niiih ??')"><i class="fas fa-trash"></i></button>
-                                </form>
+                                    {{-- <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Yakin mau hapus datanya niiih ??')"><i class="fas fa-trash"></i></button>
+                                </form> --}}
                             </td>
                         </tr>
                         @endforeach

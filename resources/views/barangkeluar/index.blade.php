@@ -29,7 +29,7 @@
     <section class="content">
         <div class="container-fluid">
           <div class="row">
-            <div class="col-8">
+            <div class="col-md-8 col-sm-12">
               <div class="card">
                 <div class="card-header">
                     @if (session('status'))
@@ -48,7 +48,7 @@
                       <th width="100">KATEGORI</th>
                       <th>NAMA BARANG</th>
                       <th width="100">JUMLAH</th>
-                      <th width="100">AKSI</th>
+                      <th width="40">AKSI</th>
                     </tr>
                     </thead>
 
@@ -59,13 +59,13 @@
                             <td>{{$bkeluar->barang->kategori->kode}}</td>
                             <td>{{$bkeluar->barang->nama}}</td>
                             <td>{{$bkeluar->jumlah}}</td>
-                            <td text-center>
-                                <form action="/bkeluar/{{ $bkeluar->id }}/delete" method="POST">
+                            <td>
+                                {{-- <form action="/bkeluar/{{ $bkeluar->id }}/delete" method="POST">
                                     @method('delete')
-                                    @csrf
+                                    @csrf --}}
                                     <a href="/bkeluar/{{ $bkeluar->id }}/edit" class="btn btn-primary btn-sm"><i class="fas fa-pencil-alt"></i></a>&emsp;
-                                    <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Yakin mau hapus datanya niiih ??')"><i class="fas fa-trash"></i></button>
-                                </form>
+                                    {{-- <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Yakin mau hapus datanya niiih ??')"><i class="fas fa-trash"></i></button>
+                                </form> --}}
                             </td>
                         </tr>
                         @endforeach

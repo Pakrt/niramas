@@ -217,18 +217,21 @@
                   <p>Master Barang</p>
                 </a>
               </li>
+              @if(auth()->user()->role == 'ADMIN')
               <li class="nav-item">
                 <a href="{{ url('bagian')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Master Department</p>
                 </a>
               </li>
+              @endif
               <li class="nav-item">
                 <a href="{{ url('karyawan')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Master Karyawan</p>
                 </a>
               </li>
+              @if(auth()->user()->role == 'ADMIN')
               <li class="nav-item">
                 <a href="{{ url('kategori')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
@@ -241,6 +244,7 @@
                   <p>Master Satuan</p>
                 </a>
               </li>
+              @endif
             </ul>
           </li>
           <li class="nav-item has-treeview">
@@ -258,12 +262,14 @@
                   <p>Form Barang Keluar</p>
                 </a>
               </li>
+              @if(auth()->user()->role == 'ADMIN')
               <li class="nav-item">
                 <a href="{{ url('bmasuk/form')}}" class="nav-link">
                   <i class="far fa-file nav-icon"></i>
                   <p>Form Barang Masuk</p>
                 </a>
               </li>
+              @endif
             </ul>
           </li>
           <li class="nav-item has-treeview">

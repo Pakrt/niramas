@@ -26,16 +26,16 @@
     <section class="content">
         <div class="container-fluid">
           <div class="row">
-            <div class="col-6">
+            <div class="col-md-6 col-sm-12">
               <div class="card">
                 <div class="card-body">
                     <form action="/bagian/{{$bagian->id}}/update" method="POST">
                         @csrf
-                            <div class="form-group">
+                            <div class="form-group col-md-4 col-sm-4">
                                 <label>Kode Department</label>
                                 <input type="text" name="kode" class="form-control" style="border-color: maroon" required value="{{$bagian->kode}}" disabled>
                             </div>
-                            <div class="form-group">
+                            <div class="form-group col-md-6 col-sm-12">
                                 <label>Nama Department</label>
                                 <input type="text" name="nama" class="form-control" style="border-color: maroon" required value="{{$bagian->nama}}">
                             </div>

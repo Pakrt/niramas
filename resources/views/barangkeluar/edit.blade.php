@@ -26,7 +26,7 @@
     <section class="content">
         <div class="container-fluid">
           <div class="row">
-            <div class="col-6">
+            <div class="col-md-6 col-sm-12">
               <div class="card">
                 <div class="card-body">
                     <form action="/bkeluar/{{$bkeluar->id}}/update" method="POST">

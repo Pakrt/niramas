@@ -25,7 +25,7 @@
     <section class="content">
         <div class="container-fluid">
           <div class="row">
-            <div class="col-6">
+            <div class="col-sm-12 col-md-6">
               <div class="card">
                 <div class="card-header">
                     @if (session('status'))
@@ -43,9 +43,9 @@
                     <thead>
                     <tr>
                       <th width="20">#</th>
-                      <th width="200">KODE KATEGORI</th>
+                      <th width="120">KODE KATEGORI</th>
                       <th>NAMA KATEGORI</th>
-                      <th width="100">AKSI</th>
+                      <th width="40">AKSI</th>
                     </tr>
                     </thead>
 
@@ -55,13 +55,13 @@
                             <th scope="row">{{ $loop->iteration}}</th>
                             <td>{{$kategori->kode}}</td>
                             <td>{{$kategori->nama}}</td>
-                            <td text-center>
-                                <form action="/kategori/{{ $kategori->id }}/delete" method="POST">
+                            <td>
+                                {{-- <form action="/kategori/{{ $kategori->id }}/delete" method="POST">
                                     @method('delete')
-                                    @csrf
+                                    @csrf --}}
                                     <a href="/kategori/{{ $kategori->id }}/edit" class="btn btn-primary btn-sm"><i class="fas fa-pencil-alt"></i></a>&emsp;
-                                    <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Yakin mau hapus datanya niiih ??')"><i class="fas fa-trash"></i></button>
-                                </form>
+                                    {{-- <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Yakin mau hapus datanya niiih ??')"><i class="fas fa-trash"></i></button>
+                                </form> --}}
                             </td>
                         </tr>
                         @endforeach
@@ -92,18 +92,18 @@
                 <form action="/kategori/create" method="POST">
                 @csrf
                 <div class="modal-body">
-                    <div class="form-group{{$errors->has('kode') ? 'has-error' : ''}}">
+                    <div class="form-group col-6{{$errors->has('kode') ? 'has-error' : ''}}">
                         <label>Kode Kategori</label>
                         <input type="text" name="kode" class="form-control" style="border-color: maroon" required>
                         @if($errors->has('kode'))
                             <span class="help-block">{{$errors->first('kode')}}</span>
                         @endif
                     </div>
-                    <div class="form-group">
+                    <div class="form-group col-12">
                         <label>Nama Kategori</label>
                         <input type="text" name="nama" class="form-control" style="border-color: maroon" required>
                     </div>
-                    <div class="form-group">
+                    <div class="form-group col-12">
                         <label>Keterangan</label>
                         <input type="text" name="keterangan" class="form-control" style="border-color: maroon">
                     </div>

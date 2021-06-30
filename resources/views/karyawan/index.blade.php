@@ -34,7 +34,9 @@
                         <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                     </div>
                     @endif
+                    @if(auth()->user()->role == 'ADMIN')
                     <a href="{{ url('karyawan/form')}}" class="btn btn-secondary">Tambah Data</a>
+                    @endif
                 </div>
                 <div class="card-body">
                     <div class="row d-flex align-items-stretch">
@@ -71,7 +73,7 @@
                                       <a href="/karyawan/{{$karyawan->id}}/detail" class="btn btn-sm btn-primary">
                                         <i class="fas fa-user"></i> Detail
                                       </a>
-                                      <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Yakin mau hapus datanya niiih ??')"><i class="fas fa-trash"></i> Hapus</button>
+                                      {{-- <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Yakin mau hapus datanya niiih ??')"><i class="fas fa-trash"></i> Hapus</button> --}}
                                     </form>
                                 </div>
                               </div>

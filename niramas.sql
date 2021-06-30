@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 05 Apr 2021 pada 04.59
+-- Waktu pembuatan: 30 Jun 2021 pada 05.10
 -- Versi server: 10.4.11-MariaDB
 -- Versi PHP: 7.4.3
 
@@ -31,7 +31,7 @@ SET time_zone = "+00:00";
 CREATE TABLE `bagians` (
   `id` int(11) NOT NULL,
   `kode` varchar(100) NOT NULL,
-  `nama` varchar(20) NOT NULL,
+  `nama` varchar(100) NOT NULL,
   `spare` varchar(255) DEFAULT NULL,
   `spares` varchar(255) DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
@@ -43,8 +43,8 @@ CREATE TABLE `bagians` (
 --
 
 INSERT INTO `bagians` (`id`, `kode`, `nama`, `spare`, `spares`, `created_at`, `updated_at`) VALUES
-(1, 'ENG', 'ENGINEERING', NULL, NULL, '2020-11-05 18:46:31', '2020-11-05 19:18:36'),
-(2, 'PROD', 'PRODUKSI', NULL, NULL, '2020-11-09 18:57:46', '2020-11-09 18:57:46');
+(1, 'HRGA', 'Human Resources and General Affair', NULL, NULL, '2021-06-26 10:28:39', '2021-06-26 10:28:39'),
+(2, 'ENG', 'ENGINEERING', NULL, NULL, '2020-11-05 18:46:31', '2020-11-05 19:18:36');
 
 -- --------------------------------------------------------
 
@@ -67,17 +67,6 @@ CREATE TABLE `barangs` (
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Dumping data untuk tabel `barangs`
---
-
-INSERT INTO `barangs` (`id`, `kategori_id`, `nama`, `jumlah`, `spesifikasi`, `keterangan`, `minim`, `satuan_id`, `spare`, `spares`, `created_at`, `updated_at`) VALUES
-(3, 3, 'KARTU NAMA', 0, 'RIA AYU WARDHANI', NULL, 0, 1, NULL, NULL, '2020-10-26 20:54:41', '2020-11-12 01:06:43'),
-(4, 2, 'PAPAN TULIS', 5, '200x100', NULL, NULL, 1, NULL, NULL, '2020-10-26 21:08:54', '2020-10-27 21:12:17'),
-(5, 4, 'PASIR PUTIH', 0, 'DI PINGGIR LAUT ARAFURU', NULL, NULL, 2, NULL, NULL, '2020-10-28 00:21:03', '2020-11-01 21:04:31'),
-(6, 2, 'PULPEN', 0, 'STANDART CHARTERED', NULL, 0, 2, NULL, NULL, '2020-11-01 21:09:16', '2020-11-12 01:06:58'),
-(7, 2, 'STABILO', 0, 'IJO MENTAH', NULL, NULL, 1, NULL, NULL, '2020-11-12 01:07:23', '2020-11-12 01:07:23');
-
 -- --------------------------------------------------------
 
 --
@@ -97,14 +86,6 @@ CREATE TABLE `bkeluars` (
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Dumping data untuk tabel `bkeluars`
---
-
-INSERT INTO `bkeluars` (`id`, `barang_id`, `jumlah`, `keterangan`, `tanggal`, `user_id`, `spare`, `spares`, `created_at`, `updated_at`) VALUES
-(1, 4, 5, 'Untuk Ruang Meeting', '2020-10-21', 1, NULL, NULL, '2020-10-27 21:12:17', '2020-10-27 21:12:17'),
-(2, 6, 9, NULL, '2020-11-02', 1, NULL, NULL, '2020-11-01 21:27:04', '2020-11-01 21:27:04');
-
 -- --------------------------------------------------------
 
 --
@@ -123,15 +104,6 @@ CREATE TABLE `bmasuks` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data untuk tabel `bmasuks`
---
-
-INSERT INTO `bmasuks` (`id`, `barang_id`, `jumlah`, `keterangan`, `tanggal`, `user_id`, `spare`, `spares`, `created_at`, `updated_at`) VALUES
-(1, 4, 10, 'TOKOPEDIA', '2020-10-20', 1, NULL, NULL, '2020-10-27 20:28:01', '2020-10-27 20:28:01'),
-(2, 3, 11, 'BUKALAPAK', '2020-10-22', 1, NULL, NULL, '2020-10-27 21:14:31', '2020-10-27 21:14:31'),
-(3, 6, 10, 'BUKALAPAK', '2020-11-02', 1, NULL, NULL, '2020-11-01 21:10:17', '2020-11-01 21:10:17');
 
 -- --------------------------------------------------------
 
@@ -176,7 +148,8 @@ CREATE TABLE `karyawans` (
 --
 
 INSERT INTO `karyawans` (`id`, `nik`, `user_id`, `bagian_id`, `nama`, `tanggal_lahir`, `jenis_kelamin`, `alamat`, `kontak`, `avatar`, `spare`, `spares`, `created_at`, `updated_at`) VALUES
-(2, '1461800043', 3, 1, 'RIZAL TAUFIQ', '2020-11-04', 'L', 'Perumahan Asabri blok A.05, Kecamatan Pandaan, Kabupaten Pasuruan, Jawa Timur, Indonesia', '82147777556', NULL, NULL, NULL, '2020-11-09 21:10:08', '2020-11-16 00:09:55');
+(1, '3214111103800001', 1, 1, 'Ria Ayu Wardani', '1995-03-18', 'P', 'Jember, Jawa Timur', '81216490610', NULL, NULL, NULL, '2021-06-26 10:31:09', '2021-06-29 19:20:50'),
+(2, '3514111904980001', 2, 2, 'Muchammad Rizal Taufiq Hidayah', '1998-04-19', 'L', 'Perum Asabri blok A.05, Pandaan, Pasuruan', '82147777556', NULL, NULL, NULL, '2021-06-29 19:24:40', '2021-06-29 19:24:40');
 
 -- --------------------------------------------------------
 
@@ -194,15 +167,6 @@ CREATE TABLE `kategoris` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data untuk tabel `kategoris`
---
-
-INSERT INTO `kategoris` (`id`, `kode`, `nama`, `keterangan`, `spare`, `spares`, `created_at`, `updated_at`) VALUES
-(2, 'ATKS', 'ALAT TULIS KANTOR', NULL, NULL, NULL, '2020-10-26 19:15:54', '2020-10-26 19:56:09'),
-(3, 'KAR', 'KARYAWAN', NULL, NULL, NULL, '2020-10-26 20:52:37', '2020-10-26 20:52:37'),
-(4, 'GA', 'GENERAL AFFAIR', NULL, NULL, NULL, '2020-10-26 20:52:57', '2020-10-26 20:52:57');
 
 -- --------------------------------------------------------
 
@@ -261,15 +225,6 @@ CREATE TABLE `satuans` (
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Dumping data untuk tabel `satuans`
---
-
-INSERT INTO `satuans` (`id`, `kode`, `nama`, `keterangan`, `spare`, `spares`, `created_at`, `updated_at`) VALUES
-(1, 'PCS', 'PCS', 'Contoh', NULL, NULL, '2020-10-26 20:49:33', '2020-10-26 20:51:38'),
-(2, 'PACK', 'PACK', NULL, NULL, NULL, '2020-10-26 20:53:14', '2020-10-26 20:53:14'),
-(3, 'KRT', 'KARTON', NULL, NULL, NULL, '2020-10-26 20:53:37', '2020-10-26 20:53:37');
-
 -- --------------------------------------------------------
 
 --
@@ -294,8 +249,8 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `role`, `name`, `email`, `avatar`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'manager', 'Admin', 'admin@admin.com', NULL, NULL, '$2y$10$zH8pNsPCa9di0xYQOj4e1eITnvYucS17x6n0UFQAT1fQp3e3nqLty', NULL, '2020-09-17 20:11:10', '2020-09-17 20:11:10'),
-(3, 'crew', 'RIZAL TAUFIQ', 'lensa17.2018@gmail.com', 'me.jpeg', NULL, '$2y$10$2ekXqtM1YzJ52zoKAE8TZ.xKV5p.EDGGUBnnyy9vHeXybFtfxPyOG', 'cUmouv2ttoiIyeOIzuU7w9UPXlA20eWk9DGJXRCN4UVn5VlQazGZx5MtPSay', '2020-11-09 21:10:08', '2020-11-12 00:51:42');
+(1, 'ADMIN', 'Ria Ayu Wardani', 'ria.ayuwardani@inacofood.com', NULL, NULL, '$2y$10$hmjsuvWr0SmcybXsx5llseIwCf6vGU1pmHRkUfWsfp6K8iBMqI9Pi', NULL, '2021-06-26 10:31:09', '2021-06-26 10:31:09'),
+(2, 'ADMIN', 'Muchammad Rizal Taufiq Hidayah', 'mrizaltaufiqh@gmail.com', NULL, NULL, '$2y$10$DiQZa5NNipUiJ1tzDfVVqeu.V3S7MiVn.Mk/mTcd7iIiruK/LQA2y', NULL, '2021-06-29 19:24:40', '2021-06-29 19:24:40');
 
 --
 -- Indexes for dumped tables
@@ -380,7 +335,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT untuk tabel `bagians`
 --
 ALTER TABLE `bagians`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT untuk tabel `barangs`
@@ -410,7 +365,7 @@ ALTER TABLE `failed_jobs`
 -- AUTO_INCREMENT untuk tabel `karyawans`
 --
 ALTER TABLE `karyawans`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT untuk tabel `kategoris`
@@ -434,7 +389,7 @@ ALTER TABLE `satuans`
 -- AUTO_INCREMENT untuk tabel `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

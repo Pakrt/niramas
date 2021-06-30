@@ -29,7 +29,7 @@
     <section class="content">
         <div class="container-fluid">
           <div class="row">
-            <div class="col-10">
+            <div class="col-lg-10 col-md-12">
               <div class="card">
                 <div class="card-header">
                     @if (session('status'))
@@ -38,22 +38,24 @@
                         <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                     </div>
                     @endif
+                    @if(auth()->user()->role == 'ADMIN')
                     <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#exampleModal">
                         Tambah Data
                     </button>
+                    @endif
                 </div>
                 <div class="card-body">
                   <table id="example1" class="table table-bordered table-striped">
                     <thead>
                     <tr>
                       <th width="20">#</th>
-                      <th width="100">KATEGORI</th>
+                      <th width="80">KATEGORI</th>
                       <th>NAMA BARANG</th>
                       <th width="50">JUMLAH</th>
-                      <th width="100">MINIM STOK</th>
+                      <th width="50">MIN STOK</th>
                       <th width="50">SATUAN</th>
                       <th>SPESIFIKASI</th>
-                      <th width="100">AKSI</th>
+                      <th width="40">AKSI</th>
                     </tr>
                     </thead>
 
@@ -67,13 +69,13 @@
                             <td>{{$barang->minim}}</td>
                             <td>{{$barang->satuan->kode}}</td>
                             <td>{{$barang->spesifikasi}}</td>
-                            <td text-center>
-                                <form action="/barang/{{ $barang->id }}/delete" method="POST">
+                            <td>
+                                {{-- <form action="/barang/{{ $barang->id }}/delete" method="POST">
                                     @method('delete')
-                                    @csrf
+                                    @csrf --}}
                                     <a href="/barang/{{ $barang->id }}/edit" class="btn btn-primary btn-sm"><i class="fas fa-pencil-alt"></i></a>&emsp;
-                                    <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Yakin mau hapus datanya niiih ??')"><i class="fas fa-trash"></i></button>
-                                </form>
+                                    {{-- <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Yakin mau hapus datanya niiih ??')"><i class="fas fa-trash"></i></button>
+                                </form> --}}
                             </td>
                         </tr>
                         @endforeach
@@ -124,23 +126,25 @@
                         <label>Spesifikasi</label>
                         <input type="text" name="spesifikasi" class="form-control" style="border-color: maroon">
                     </div>
-                    <div class="form-group">
-                        <label>Minimum Stok</label>
-                        <input type="number" name="minim" class="form-control" style="border-color: maroon">
+                    <div class="row">
+                        <div class="form-group col-4">
+                            <label>Minimum Stok</label>
+                            <input type="number" name="minim" class="form-control" style="border-color: maroon">
+                        </div>
+                        {{-- <div class="form-group">
+                            <label>Gambar</label>
+                            <input type="file" class="form-control" style="border-color: maroon">
+                        </div> --}}
+                        <div class="form-group col-8">
+                            <label>Satuan</label>
+                            <select class="form-control" name="satuan_id" style="border-color: maroon" required>
+                                @foreach ($satuan as $satuan)
+                                <option value="{{$satuan->id}}">{{$satuan->kode}} - {{$satuan->nama}}</option>
+                                @endforeach
+                            </select>
+                        </div>
                     </div>
-                    {{-- <div class="form-group">
-                        <label>Gambar</label>
-                        <input type="file" class="form-control" style="border-color: maroon">
-                    </div> --}}
-                    <div class="form-group">
-                        <label>Satuan</label>
-                        <select class="form-control" name="satuan_id" style="border-color: maroon" required>
-                            @foreach ($satuan as $satuan)
-                            <option value="{{$satuan->id}}">{{$satuan->kode}} - {{$satuan->nama}}</option>
-                            @endforeach
-                        </select>
                     </div>
-                </div>
                 <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Kembali</button>
                 <button type="submit" class="btn btn-success">Tambah Data</button>

@@ -56,10 +56,8 @@
                             <div class="form-group col-md-4 col-xs-12">
                                 <label>Role</label>
                                 <select style="border-color: maroon" class="form-control select2bs4" name="role"  required>
-                                    <option value="ADMIN">Admin</option>
-                                    <option value="CREW">Crew</option>
-                                    <option value="MANAGER">Manager</option>
-                                    <option value="SUPERVISOR">Supervisor</option>
+                                    <option value="ADMIN">ADMIN</option>
+                                    <option value="CREW">CREW</option>
                                 </select>
                             </div>
                         </div>

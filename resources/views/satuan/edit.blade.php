@@ -26,23 +26,27 @@
     <section class="content">
         <div class="container-fluid">
           <div class="row">
-            <div class="col-6">
+            <div class="col-md-4 col-sm-12">
               <div class="card">
                 <div class="card-body">
                     <form action="/satuan/{{$satuan->id}}/update" method="POST">
                         @csrf
-                            <div class="form-group">
+                        <div class="row">
+                            <div class="form-group col-4">
                                 <label>Kode Satuan</label>
                                 <input type="text" name="kode" class="form-control" style="border-color: maroon" required value="{{$satuan->kode}}" disabled>
                             </div>
-                            <div class="form-group">
+                            <div class="form-group col-8">
                                 <label>Nama Satuan</label>
                                 <input type="text" name="nama" class="form-control" style="border-color: maroon" required value="{{$satuan->nama}}">
                             </div>
-                            <div class="form-group">
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-12">
                                 <label>Keterangan</label>
                                 <input type="text" name="keterangan" class="form-control" style="border-color: maroon" value="{{$satuan->keterangan}}">
                             </div>
+                        </div>
                         <div class="modal-footer">
                             <a href="{{ url('/satuan') }}" class="btn btn-warning" onclick="return confirm('Yakin mau balik ??')">Kembali</a>
                             <button type="submit" class="btn btn-success" onclick="return confirm('Udah selesai update nya ??')">Update Data</button>
