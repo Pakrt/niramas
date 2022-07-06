@@ -19,6 +19,7 @@ class KaryawanController extends Controller
 
     public function create(Request $request)
     {
+        $id = DB::table('karyawans')->max('id') + 1;
         $this->validate($request, [
             'email' => 'unique:users',
             'kontak' => 'unique:karyawans',
@@ -27,7 +28,7 @@ class KaryawanController extends Controller
         $user = new \App\User;
         $user->role = $request->role;
         $user->name = $request->nama;
-        $user->email = $request->email;
+        $user->email = 'user'.$id.'@user.com';
         $user->password = bcrypt('inaco123');
         $user->save();
 
