@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\User;
 use App\Bagian;
 use App\Karyawan;
+use DB;
 use Illuminate\Http\Request;
 
 use function GuzzleHttp\Promise\all;
